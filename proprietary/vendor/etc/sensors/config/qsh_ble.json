@@ -1,13 +1,17 @@
 {
   "config":{
     "hw_platform": ["MTP", "Surf", "RCM", "QRD", "IDP"],
-    "soc_id": ["519", "536"]
+    "soc_id": ["519", "536", "557", "577", "608"]
   },
   "qsh_ble_config":{
     "owner": "qsh_ble",
 
+    "passive_or_active_scan":{ "type": "str", "ver": "0",
+        "data": "active"
+    },
+
     "scan_mode_low_power":{ "type": "str", "ver": "0",
-        "data": "1400,140,1"
+        "data": "3120,160,1"
     },
     "scan_mode_balanced":{ "type": "str", "ver": "0",
         "data": "730,183,2"

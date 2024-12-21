@@ -1,7 +1,7 @@
 {
     "config": {
         "hw_platform": ["MTP"],
-        "soc_id": ["519", "536"]
+        "soc_id": ["557"]
     },
     "akmlib": {
         "owner": "akmlib",
@@ -59,6 +59,9 @@
                 },
                 "config2": {
                     "ver": "0","type": "int","data": "0"
+                },
+                "hflucv_th": {
+                    "ver": "0","type": "int","data": "2500"
                 }
             },
             ".volatile": {

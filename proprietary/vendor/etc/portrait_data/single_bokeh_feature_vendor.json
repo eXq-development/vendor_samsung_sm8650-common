@@ -1,5 +1,5 @@
 {
-    "deviceName": "SM8550_common",
+    "deviceName": "SM8650_common",
 
     "HumanAwareEngine": {
         "Perf_mode_preview": "PERFMODE_LOW",
@@ -22,8 +22,12 @@
     },
 
     "LD_FD_engine": {
-        "mode_preview": "default",
+        "mode_preview": null,
         "mode_capture": "default"
+    },
+
+    "HW_FD_engine": {
+        "mode_preview": "true"
     },
 
     "GlassSegSDK": {
@@ -32,45 +36,45 @@
     },
 
     "ModelPreLoadMode": {
-        "seg": "false",
-        "depth": "false",
+        "seg": "true",
+        "depth": "true",
         "matting": "false",
         "bodydepth": "false"
     },
-    
+
     "capture_segmentation": {
-        "Weightfile": "/system/cameradata/portrait_data/SRIB_Acenet_A16W8_V141_sm8550_snpe2704.dlc",
-        "Version": "141",
+        "Weightfile": "/system/cameradata/portrait_data/SRIB_ClatNet_FP16_V002_sm8650_snpe2151.dlc",
+        "Version": "002",
         "ComputeUnit": "COMPUTE_DSP",
-        "ExecutionDataType": "QASYMM16",
-        "ModelType": "MODEL_TYPE_OBJ_INSTANCE_CAPTURE",
+        "ExecutionDataType": "FLOAT16",
+        "ModelType": "MODEL_TYPE_OBJ_INSTANCE_VIDEO",
         "ModelFormat": "SNPE",
         "Encryption": "false",
-        "input_size": [[640, 640], [640, 640], [640, 640], [640, 640]]
+        "input_size": [[448, 448], [448, 448], [448, 448], [448, 448]]
     },
-    "capture_dual_pixel_depth": {
-        "Weightfile": "/system/cameradata/portrait_data/SRIB_DPD_A16W8_V013_sm8550_snpe2106.dlc",
-        "Version": "013",
+    "capture_unified_single_depth": {
+        "Weightfile": "/system/cameradata/portrait_data/SRIB_UDS_A16W8_V002_sm8650_snpe2141.dlc",
+        "Version": "002",
         "ComputeUnit": "COMPUTE_DSP",
         "ExecutionDataType": "QASYMM16",
-        "ModelType": "MODEL_TYPE_DPDE",
+        "ModelType": "MODEL_TYPE_UNIFIED_SID",
+        "ModelFormat": "SNPE",
+        "Encryption": "false",
+        "input_size": [[896, 896], [896, 896], [896, 896], [896, 896]]
+    },
+    "capture_unified_dual_depth": {
+        "Weightfile": "/system/cameradata/portrait_data/SRIB_UDD_A16W8_V002_sm8650_snpe2141.dlc",
+        "Version": "002",
+        "ComputeUnit": "COMPUTE_DSP",
+        "ExecutionDataType": "QASYMM16",
+        "ModelType": "MODEL_TYPE_UNIFIED_DPDE",
         "ModelFormat": "SNPE",
         "Encryption": "false",
         "input_size": [[1024, 768], [1024, 768], [1024, 768], [1024, 768]]
-    },
-    "capture_depth": {
-        "Weightfile": "/system/cameradata/portrait_data/SRIB_SID_A16W8_V018_sm8550_snpe2433.dlc",
-        "Version": "018",
-        "ComputeUnit": "COMPUTE_DSP",
-        "ExecutionDataType": "QASYMM16",
-        "ModelType": "MODEL_TYPE_DEPTH",
-        "ModelFormat": "SNPE",
-        "Encryption": "false",
-        "input_size": [[832, 832], [832, 832], [832, 832], [832, 832]]
-    },
+    },    
     "capture_matting": {
-        "Weightfile": "/system/cameradata/portrait_data/SRIB_Matting_INT8_V014_sm8550_snpe2704_TILE_896.dlc",
-        "Version": "014",
+        "Weightfile": "/system/cameradata/portrait_data/SRIB_Matting_INT8_V015_sm8650_snpe2151_TILE_896.dlc",
+        "Version": "015",
         "ComputeUnit": "COMPUTE_DSP",
         "ExecutionDataType": "QASYMM8",
         "ModelType": "MODEL_TYPE_MATTING",
@@ -78,27 +82,20 @@
         "Encryption": "false",
         "input_size": [[1600, 1600],  [1600, 1600], [1600, 1600], [1600, 1600]]
     },
-    "capture_bodydepth": {
-        "Weightfile": "/system/cameradata/portrait_data/SRIB_HDE_A16W8_V003_sm8550_snpe2433.dlc",
+    "preview_1st_segmentation": {
+        "Weightfile": "/vendor/etc/portrait_data/SRIB_ClatNetLite_INT8_V003_sm8650_vendor.tvm.so",
         "Version": "003",
         "ComputeUnit": "COMPUTE_DSP",
-        "ExecutionDataType": "QASYMM16",
-        "ModelType": "MODEL_TYPE_OBJ_DEPTH",
-        "ModelFormat": "SNPE",
-        "Encryption": "false",
-        "input_size":  [[512, 512], [512, 512], [512, 512], [512, 512]]
-    },
-    "preview_1st_segmentation": {
-        "Weightfile": "/vendor/etc/portrait_data/",
-        "Version": "001",
-        "ComputeUnit": "COMPUTE_DSP",
         "ExecutionDataType": "QASYMM8",
-        "ModelType": "MODEL_TYPE_YOLACT_LIVE",
-        "ModelFormat": "SNPE",
+        "ModelType": "MODEL_TYPE_OBJ_INSTANCE_VIDEO",
+        "ModelFormat": "TVM",
         "Encryption": "false",
         "FadeEffectTime": 500,
         "TransitionEffectTime": 300,
-        "input_size": [[320, 320], [320, 320], [320, 320], [320, 320]],
-        "effects_supported": [0, 6, 10, 11, 12, 13, 14, 15]
-    }
+        "input_size": [[384, 384], [384, 384], [384, 384], [384, 384]],
+        "effects_supported": [0, 1, 2, 6, 10, 11, 12, 13, 14, 15]
+    },
+
+    "pet_support_camera" : true,
+    "pet_support_add_portrait" : true
 }

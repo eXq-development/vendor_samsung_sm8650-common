@@ -35,6 +35,7 @@ do
 
 	wait
 
+	setprop odm.system.all.modules.ready 1
 	exit 0
 done
 

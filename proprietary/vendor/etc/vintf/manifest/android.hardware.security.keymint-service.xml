@@ -25,20 +25,22 @@ This file is copied from
 <manifest version="1.0" type="device">
     <hal format="aidl">
         <name>android.hardware.security.keymint</name>
-        <version>2</version>
-        <fqname>IKeyMintDevice/default</fqname>
+        <version>3</version>
+        <fqname>IKeyMintDevice/strongbox</fqname>
     </hal>
-     <hal format="aidl">
+<!-- TODO: Enable other interfaces
+    <hal format="aidl">
         <name>android.hardware.security.sharedsecret</name>
-        <fqname>ISharedSecret/default</fqname>
+        <fqname>ISharedSecret/strongbox</fqname>
     </hal>
     <hal format="aidl">
         <name>android.hardware.security.secureclock</name>
-        <fqname>ISecureClock/default</fqname>
+        <fqname>ISecureClock/strongbox</fqname>
     </hal>
     <hal format="aidl">
         <name>android.hardware.security.keymint</name>
-        <version>2</version>
-        <fqname>IRemotelyProvisionedComponent/default</fqname>
+        <version>3</version>
+        <fqname>IRemotelyProvisionedComponent/strongbox</fqname>
     </hal>
+-->
 </manifest>
